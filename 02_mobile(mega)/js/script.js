@@ -1,16 +1,16 @@
 $(function(){
-
-
+    //페이지 구성
+    //초기설정
+    //
     $('#container section:not('+ $('.submenu li a.connect.selected').attr('href') +')').hide();
-
-
     $('.submenu li a.connect').click(function(){
-
+        //연결된 서브메뉴 클릭시 메뉴창 닫기
         $('#menu_wrap').css({right:'-60%'});
 
+        //메뉴 >1. 모든메뉴 클래스 제거 +2.클릭한 메뉴에만 클래스 적용
         $('.submenu li a.connect').removeClass('selected');
         $(this).addClass('selected');
-
+        //내용 =>1.모든내용 숨김+ 2.클릭한 메뉴의 내용만 보임
         $('#container section').hide();
         $( $(this).attr('href')).show();
         return false;
@@ -18,12 +18,10 @@ $(function(){
 
     //메뉴 표시
     $('.menu_icon').click(function(){
-        $('#menu_wrap').animate({right:0},"normal");
-        return false;
+        $('#menu_wrap').animate({right:0},400);
     });
     $('.menu_close').click(function(){
-        $('#menu_wrap').animate({right:'-60%'},"normal");
-        return false;
+        $('#menu_wrap').animate({right:'-60%'},400);
     });
 
     // 웹의 메뉴 숨김 처리
@@ -41,14 +39,14 @@ $(function(){
         $('#gnb > ul > li > ul').slideUP();
     }
     $(this).children('ul').slideDown();
-
-
     });
-    //초기설정
-    $('.top_btn')
 
+    //top_btn
+    //초기설정
+    $('.top_btn').hide();
     //이벤트 => scroll 이벤트 대상(window)
-    $(window).scroll(function(){
+    //세로스크롤바 숨김 =>scroll 이벤트 대상 변경(body)
+    $('body').scroll(function(){
         //스크롤 높이 + 화면 높이
         let sc_num = $(this).scrollTop();
         let h_num = $(this).height();
