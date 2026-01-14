@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+@font-face{
+	font-family:nanum;
+	src:local('NanumGothic'),
+	url('../font/NanumGothic.eot'),
+	url('../font/NanumGothic.woff') format('woff'),
+	url('../font/NanumGothic.ttf') format('truetype');
+}
