@@ -16,8 +16,7 @@ $(function(){
         return false;
     });
 
-
-
+    //메뉴 표시
     $('.menu_icon').click(function(){
         $('#menu_wrap').animate({right:0},"normal");
         return false;
@@ -28,7 +27,9 @@ $(function(){
     });
 
     // 웹의 메뉴 숨김 처리
-    $("menu_wrap")
+    $("menu_wrap").mouseleave(function(){
+        $('#menu_wrap').animate({right:'-60%'},400);
+    });
 
     //메뉴 동작
     $('#gnb >ul > li').click(function(){
@@ -43,8 +44,8 @@ $(function(){
 
 
     });
-
-
+    //초기설정
+    $('.top_btn')
 
     //이벤트 => scroll 이벤트 대상(window)
     $(window).scroll(function(){
