@@ -1,0 +1,78 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+
+메뉴 <i class="fas fa-bars"></i>
+검색 <i class=fas fa-search"></i>
+장바구니 <i class="fas fa-cart-plus"></i>
+마이페이지<i class="fas fa-user"></i>
+닫기 <i class="far fa-times-circle"></i>
+더하기 <i class="fas fa-plus"></i>
+빼기 <i class="fas fa-minus"></i>
+KAKAOTALK <i class="fa-brands fa-kakao-talk"></i>
+totop <i class="fas fa-arrow-circle-up"></i>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+font-family : "nanum gothic",sans-serif;
+
+------------
+
+공식몰혜택
+Membership
+Event
+BestReview
+Product
+전체상품
+선물세트
+틴케이스
+스페셜쿠키
+Special Order
+대량주문
+카페쿠키
+주문문의
+Community
+공지사항
+Q&A
+FAQ
+쿠폰존
+Brand
+
+
+CS center
+070-7731-8169
+
+------
+
+라인업
+마에스트로세트
+45,000원
+
+샤르망 세트
+22,000원
+
+베이커스초이스 세트
+17,000원
+
+스푼쿠키 세트
+10,000원
+
+--------
+
+
+CS center
+
+070-7731-8169
+평일 10:00 ~ 18:00
+점심 12:00 ~ 13:00
+휴일 토/일/공휴일
+
+https://pf.kakao.com/_FDzxhxb
+
+ KAKAOTALK
+
+대량구매문의
+070-7731-8168
+
+회사소개 이용약관 개인정보처리방침 이용안내
+Copyright 2023 Grainscookie All Rights Reserved.
+
