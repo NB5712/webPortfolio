@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+/* 
+    *css변수
+    -정의 : --변수명:값;
+    -사용 : 
+
+    *전역변수 정의
+    :root {
+        --primary-color: #3498db;
+        --font-size: 16px;
+    }
+
+    * 전역변수 적용
+    .txt {color: var(--primary-color); }
+
+    * 변수의 기본값 설정
+    .txt { color: var(--primary-color, black); }
+
+*/
+
+:root {
+    --background-color: #f4f4f4;
+    --primary-color: #3498db;
+    --secrondary-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --text-color: #333;
+    --font-size: 18px;
+}
+
+
+* {margin: 0; padding: 0;}
+body {font-family: 'Segoe UI',sans-serif; background-color: var(--background-color); color: var(--text-color); font-size: var(--font-size); padding: 40px;}
+h1 {text-align: center; margin-bottom: 30px;}
+.btn {padding: 12px 24px; font-weight: bold; color: #fff; border: none; border-radius: 5px; margin: 10px; cursor: pointer; font-size: var(--font-size); transition: all 0.3s;}
+.primary {background-color: var(--primary-color);}
+.secondary {background-color: var(--secrondary-color);}
+.danger {background-color: var(--danger-color);}

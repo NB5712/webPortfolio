@@ -9,7 +9,7 @@ body { font: normal 12px "nanum gothic",sans-serif; color: #333; min-width: 320p
 .icon {font-size: 24px;}
 
 /* top */
-#top{width: 100%; padding: 10px; box-sizing: border-box; display: flex; background-color: #ff0;}
+#top{width: 100%; padding: 10px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center;}
 #top ul{display: flex; }
 #top h1{width: 20%;}
 #top h1 img {width: 100%; }
@@ -19,7 +19,7 @@ body { font: normal 12px "nanum gothic",sans-serif; color: #333; min-width: 320p
 .menu_wrap_inner h2 {width: 30%; margin-bottom: 30px;}
 .menu_wrap_inner h2 {width: 100%;}
 
-.quick_menu {}
+.quick_menu {width: 16px; font-weight: bold; color: #666; line-height: 3em; }
 .quick_menu li{}
 .quick_menu li a{}
 .quick_menu li a.selected{background-color: #333; color: #fff;}
