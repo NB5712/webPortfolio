@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/* 전역변수 */
+:root {
+    --card-width:400px;
+    --card-padding:15px;
+    --card-border-radius:10px;
+    --card-text-color:#333;
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {font-family: "Segoe UI", sans-serif; background-color: #f9f9f9; padding: 40px;}
+h1 {font-size: 24px; text-align: center; margin-bottom: 30px;}
+#wrap {display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;}
+.card {
+    width: var(--card-width);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    background-color: var(--card-bg-color);
+    color: var(--card-text-color);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+}
+.card:hover {transform: scale(1.05);}
+
+/* 카드별 지역 변수 설정 */
+.card:nth-child(1) {--card-bg-color:#ffe6e6}
+.card:nth-child(2) {--card-bg-color:#e6f7ff}
+.card:nth-child(3) {--card-bg-color:#e6f7ff}
+
+.card img {width: 100%; border-radius: 8px;}
+.card figcaption {margin-top: 10px; font-weight: bold;}

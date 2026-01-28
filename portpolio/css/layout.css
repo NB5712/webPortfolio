@@ -1,2 +1,181 @@
 @charset "utf-8";
 
+/* 기본 설정 */
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 430px; /* 모바일 화면 기준 */
+    background-color: #fff; /* 기본 배경색 배경 */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 1. 상단 헤더 */
+.top_wrap {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100; /* 콘텐츠보다 위에 보이도록 */
+}
+.top_wrap .logo img { height: 25px; }
+.top_wrap button { background: none; border: none; cursor: pointer; }
+.top_wrap button img { width: 25px; }
+
+/* 2. 메인 프로모션 배너 */
+.cont_top .main_banner img {
+    width: 100%;
+    display: block;
+}
+
+/* 3. 사용자 카드 영역 (노란색 박스) */
+.cont_bot_wrap {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.user_card {
+    background-color: #FFD200; /* 메가커피 시그니처 옐로우 */
+    border-radius: 20px;
+    padding: 25px 20px;
+}
+
+.user_info {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+.user_info strong {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* 퀵 메뉴 그리드 배치 (왼쪽 버튼들 : 오른쪽 추천음료) */
+.quick_menu_grid {
+    display: flex;
+    gap: 15px;
+}
+
+/* 왼쪽 버튼 3개 */
+.menu_buttons {
+    flex: 1; /* 왼쪽이 차지하는 공간 */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn_item {
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 15px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn_item span { /* 버튼속 폰트 */
+    font-size: 1.4rem; 
+    font-weight: 700;
+    letter-spacing: -0.5px; 
+}
+
+.btn_item img { width: 40px; }
+
+/* 오른쪽 추천 박스 */
+.recommend_box {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.recommend_box .tag {
+    font-size: 0.75rem;
+    background-color: #777;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.recommend_box img { width: 100%; margin: 10px 0; }
+
+.drink_name {
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: #999;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 10px;
+}
+
+/* 4. 하단 네비게이션 */
+.bot_wrap {
+    position: sticky;
+    bottom: 0;
+    background-color: #000;
+    border-top: 1px solid #222;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.bot_wrap ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.bot_wrap li img {
+    width: 30px;
+    height: auto;
+    opacity: 0.8; /* 비활성 상태시 80%투명 */
+}
+
+.bot_wrap li.on img {
+    opacity: 1;                 /* 활성화된 메뉴는 선명하게 */
+}
+
+/* 메가오더 버튼 (노란색 툭 튀어나온 버튼) */
+.mega_order {
+    position: relative;
+    top: -15px; /* 위로 올림 */
+}
+
+.mega_order a {
+    background-color: #FFD200;
+    width: 54px;
+    height: 64px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #000;
+}
+
+.mega_order img {
+    width: 50px !important;
+}
