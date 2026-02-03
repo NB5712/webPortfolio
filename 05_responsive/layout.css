@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+body { font:normal 14px/1.5em "돋움","Dotum",sans-serif; }
+
+/* mobile 해상도 우선 디자인 => mobile first <=> web first */
+/* 전체 디자인 => 공통 그리드 */
+.box_block {width: 100%; }
+.wrap { width: 100%; }
+.box { width: 100%; overflow: hidden; }
+
+.list1, .list2, .list3, .list4, .list5, .list6, .list7, .list8, .list9, .list10, .list11, .list12 { width: 100%; margin-bottom: 10px; }
+.box img { width: 100%; margin-bottom: 10px; }
+
+
+
+/* 해상도 768 이상 */
+/* grid2 */
+@media screen and ( min-width:768px ){
+  .wrap { width: 90%; margin: 10px auto; }
+  .box { margin: 10px 0; }
+
+  .list1, .list2, .list3, .list4, .list5, .list6, .list7, .list8, .list9, .list10, .list11, .list12 { float: left; margin-left: 2%; margin-bottom: 0; }
+  .box [class*="list"]:first-child { margin-left: 0; }
+
+  .list1{width:6.5%;}
+  .list2{width:15%;}
+  .list3{width:23.5%;}
+  .list4{width:32%;}
+  .list5{width:40.5%;}
+  .list6{width:49%;} 
+  .list7{width:57.5%;}
+  .list8{width:66%;} 
+  .list9{width:74.5%;}
+  .list10{width:83%;}
+  .list11{width:91.5%;}
+  .list12{width:100%;}
+
+}
+
+/* 해상도 960 이상 */
+/* grid1 */
+@media screen and ( min-width:960px ){
+  .wrap { width: 960px; }
+
+  .list1, .list2, .list3, .list4, .list5, .list6, .list7, .list8, .list9, .list10, .list11, .list12 {
+    margin-left: 10px; margin-right: 10px;
+  }
+
+  .list1 { width:60px; }
+  .list2 { width:140px; }
+  .list3 { width:220px; }
+  .list4 { width:300px; }
+  .list5 { width:380px; }
+  .list6 { width:460px; }
+  .list7 { width:540px; }
+  .list8 { width:620px; }
+  .list9 { width:700px; }
+  .list10 { width:780px; }
+  .list11 { width:860px; }
+  .list12 { width:940px; }
+
+}

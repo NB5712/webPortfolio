@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+.stemp_page {
+    background-color: #fff;
+}
+
+/* 1. 상단 현황 영역 */
+.stemp_status {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status_header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.status_header h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.status_header h2 strong {
+    color: #e74c3c; /* 강조용 빨간색 수치 */
+    font-size: 1.8rem;
+}
+
+.btn_history {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* 2. 스탬프 적립판 (그리드 배치) */
+.stemp_board_wrap {
+    padding: 0 20px 30px;
+}
+
+.stemp_board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개씩 2줄 */
+    gap: 10px;
+    background-color: #fdf2bb; /* 연한 노란색 배경판 */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.stemp_slot {
+    aspect-ratio: 1 / 1;
+    background-color: #fff;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 적립된 칸 스타일 */
+.stemp_slot.on {
+    border: none;
+    background-color: #fff;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+.stemp_slot.on img {
+    width: 80%;
+}
+
+/* 3. 유의사항 영역 */
+.stemp_notice {
+    padding: 20px;
+    border-top: 8px solid #f4f4f4; /* 구분선 */
+}
+
+.stemp_notice h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.stemp_notice ul li {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    word-break: keep-all;
+}

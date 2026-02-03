@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+
+/* 카테고리 페이지 전체 배경 설정 */
+.menu_category_page {
+    background-color: #FFD200; /* 배경 */
+    min-height: calc(100vh - 105px); /* 헤더(50px)와 하단바(55px)를 제외한 나머지 높이 */
+    padding: 40px 20px; /* 상단 여백 */
+}
+
+/* 2열 그리드 배치 설정 */
+.category_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 1:1 비율로 2칸 나눔 */
+    column-gap: 20px; /* 좌우 사이 간격 */
+    row-gap: 40px;    /* 위아래 사이 간격 */
+    justify-items: center; /* 중앙으로 정렬 */
+}
+
+/* 카테고리 개별 아이템 박스 */
+.category_item {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 내부 요소들을 중앙 정렬 */
+}
+
+/* 하얀색 원형 이미지 박스 수치 */
+.circle_box {
+    width: 140px;  /* 원의 너비 */
+    height: 140px; /* 원의 높이 (너비와 동일하게) */
+    background-color: #fff; /* 배경은 흰색 */
+    border-radius: 50%;     /* 50%를 주어야 완벽한 원이 됨 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;       /* 이미지가 원 밖으로 나가지 않게 처리 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 미세한 그림자로 입체감 부여 */
+    margin-bottom: 12px;    /* 이미지와 아래 글자 사이 간격 */
+}
+
+/* 원형 안의 음료 이미지 크기 */
+.circle_box img {
+    width: 85%;    /* 원 안에 여백을 두기 위해 100%보다 작게 설정 */
+    height: auto;
+    object-fit: contain; /* 이미지가 잘리지 않고 비율에 맞게 들어가도록 함 */
+}
+
+/* 카테고리 이름 텍스트 스타일 */
+.category_item p {
+    color: #000;      /* 글자색은 검정 */
+    font-size: 1.4rem; /* 텍스트 크기 확대 */
+    font-weight: 800;  /* 프로토타입처럼 아주 두껍게 */
+    line-height: 1.2;
+    text-align: center;
+    word-break: keep-all; /* '에이드&주스' 같은 긴 글자가 어색하게 깨지지 않게 함 */
+}

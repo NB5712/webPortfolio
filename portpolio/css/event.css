@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+/* 이벤트 페이지 배경 (프로토타입처럼 약간 어두운 회색이나 흰색 권장) */
+.event_page {
+    background-color: #f4f4f4;
+    padding: 15px;
+}
+
+.event_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 카드 사이의 간격 */
+}
+
+/* 개별 카드 스타일 */
+.event_card {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden; /* 이미지가 둥근 모서리를 벗어나지 않게 함 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.event_card a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* 이미지 영역 */
+.event_img {
+    width: 100%;
+    line-height: 0; /* 이미지 하단 미세 공백 제거 */
+}
+
+.event_img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 텍스트 영역 */
+.event_txt {
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.event_title {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    word-break: keep-all;
+}
+
+.event_title strong {
+    font-weight: 900;
+    color: #000;
+    margin-right: 5px;
+}
+
+/* 마우스 오버/터치 시 시각적 효과 */
+.event_card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s;
+}

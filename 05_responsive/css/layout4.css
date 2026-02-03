@@ -1,0 +1,5 @@
+@charset "utf-8";
+
+/* rkqus이미지 */
+.main_img {width: 95%; min-width: 960px; margin: 10px auto;}
+.main_img img {width: 100%; min-width: 960px; min-width: 320px;}

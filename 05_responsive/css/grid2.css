@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+
+body {font: normal 14px/1.5em "돋움","Dotum",sans-serif;}
+
+.wrap {width: 90%; margin: 10px auto; background-color: pink;}
+.box {width: 100%; overflow: hidden; margin: 10px 0;}
+
+.list1, .list2, .list3, .list4, .list5, .list6, .list7, .list8, .list9, .list10, .list11, .list12 {
+    float: left; margin-left: 2%;
+}
+.box [class*="list"]:first-child {margin-left: 0;}
+.box img {width: 100%;}
+
+
+
+
+
+
+.list1 {width: 6.5%;} /* (6.5%*1) + (2%*(1-1) = */
+.list2 {width: 15%;} /* (6.5%*2) + (2%*(2-1) = */
+.list3 {width: 23.5%;} /* (6.5%*3) + (2%*(3-1) = */
+.list4 {width: 32%;} /* (6.5%*4) + (2%*(4-1) = */
+.list5 {width: 40.5%;} /* (6.5%*5) + (2%*(5-1) = */
+.list6 {width: 49%;} /* (6.5%*6) + (2%*(6-1) = */
+.list7 {width: 57.5%;} /* (6.5%*7) + (2%*(7-1) = */
+.list8 {width: 66%;} /* (6.5%*8) + (2%*(8-1) = */
+.list9 {width: 74.5%;} /* (6.5%*9) + (2%*(9-1) = */
+.list10 {width: 83%;} /* (6.5%*10) + (2%*(10-1) = */
+.list11 {width: 91.5%;} /* (6.5%*11) + (2%*(11-1) = */
+.list12 {width: 100%;} /* (6.5%*12) + (2%*(12-1) = */
+
+
+
+

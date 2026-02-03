@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>도서 상세 정보</title>
+  <style>
+    /* reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Arial', sans-serif; background: #f8f8f8; padding: 30px; }
+
+    /* container  */
+    #container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .book-detail { display: flex; flex-wrap: wrap; gap: 20px; }
+    img { max-width: 200px; border-radius: 5px; }
+    .info { flex: 1; }
+    #container h2 { font-size: 24px; margin-bottom: 10px; }
+    #container h3 { margin: 8px 0; color: #555; }
+    #container p { margin-top: 20px; color: #333; line-height: 1.6; }
+
+    .back-btn { display: inline-block; margin-top: 30px; padding: 8px 16px; background: #6c5ce7; color: white; border-radius: 5px; text-decoration: none; }
+    .back-btn:hover { background: #4834d4; }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="book-detail">
+      <img id="thumbnail" src="" alt="책 이미지">
+      <div class="info">
+        <h2 id="title">제목</h2>
+        <h3 id="authors">저자</h3>
+        <h3 id="publisher">출판사</h3>
+        <h3 id="date">출판일</h3>
+      </div>
+    </div>
+    <p id="contents">책 내용 요약</p>
+    <a href="#" class="back-btn">← 목록으로 돌아가기</a>
+  </div>
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script>
+    $(function () {
+      // 저장된 값은 문자열이므로 다시 객체로 사용하려면 JSON.parse()를 사용해 문자열을 객체로 되돌려야
+      // 로컬스토리지에서 selectedBook 데이터를 가져와 JSON 객체로 변환
+      const data = JSON.parse(localStorage.getItem("selectedBook"));
+      
+      if (data) {
+        // 각 요소에 jQuery를 사용해 데이터 삽입
+        $("#title").text(`${data.title}`);
+        $("#authors").text(`저자: ${data.authors.join(", ")}`);
+        $("#publisher").text(`출판사: ${data.publisher}`);
+        $("#date").text(`출판일: ${data.datetime.substring(0, 10)}`);
+        $("#contents").text(`${data.contents}`);
+        $("#thumbnail").attr("src", `${data.thumbnail}`);
+
+      } else {
+        // 데이터가 없을 경우 container에 에러 메시지 출력
+        $("#container").html(`<p>도서 정보를 불러올 수 없습니다.</p>
+  <a href="index.html">돌아가기</a>`);
+      }
+
+      // 목록으로 가기 버튼
+      $(".back-btn").on("click", function (e) {
+        e.preventDefault(); // a 태그의 기본 동작(페이지 이동) 방지
+        history.back();     // 이전 페이지로 이동
+      });
+    });
+  </script>
+</body>
+</html>

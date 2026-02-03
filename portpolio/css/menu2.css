@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+
+/* 1. 상단 탭 스타일 */
+.menu_tabs {
+    display: flex;
+    overflow-x: auto; /* 카테고리가 많을 경우 옆으로 스크롤 가능하게 */
+    background-color: #000;
+    padding: 10px 5px;
+    gap: 5px;
+}
+
+.tab_item {
+    flex: 0 0 auto; /* 가로 크기 유지 */
+    padding: 6px 12px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* 현재 활성화된 탭 (노란색) */
+.tab_item.active {
+    background-color: #FFD200;
+    color: #000;
+}
+
+/* 2. 제품 그리드 설정 (3열) */
+.product_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 정확히 3등분 */
+    gap: 15px;
+    padding: 20px 15px;
+    background-color: #fff; /* 리스트 배경은 흰색 */
+}
+
+.product_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 제품 이미지 박스 */
+.prod_img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 정사각형 유지 */
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.prod_img img {
+    width: 80%;
+    height: auto;
+}
+
+/* 제품 이름 */
+.prod_name {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: -0.5px;
+    word-break: keep-all; /* 한글 단어 단위 끊김 방지 */
+}
+
+/* 3. 하단 페이지네이션 버튼 */
+.pagination {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.pagination button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #666;
+}

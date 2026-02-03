@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+
+/* 1. 상단 헤더 */
+.top_wrap {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100; /* 콘텐츠보다 위에 보이도록 */
+}
+.top_wrap .logo img { height: 25px; }
+.top_wrap button { background: none; border: none; cursor: pointer; }
+.top_wrap button img { width: 25px; }
+
+
+/* 4. 하단 네비게이션 */
+.bot_wrap {
+    position: sticky;
+    bottom: 0;
+    background-color: #000;
+    border-top: 1px solid #222;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.bot_wrap ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.bot_wrap li img {
+    width: 30px;
+    height: auto;
+    opacity: 0.8; /* 비활성 상태시 80%투명 */
+}
+
+.bot_wrap li.on img {
+    opacity: 1;                 /* 활성화된 메뉴는 선명하게 */
+}
+
+/* 메가오더 버튼 (노란색 툭 튀어나온 버튼) */
+.mega_order {
+    position: relative;
+    top: -15px; /* 위로 올림 */
+}
+
+.mega_order a {
+    background-color: #FFD200;
+    width: 54px;
+    height: 64px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #000;
+}
+
+.mega_order img {
+    width: 50px !important;
+}

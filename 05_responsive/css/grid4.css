@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+body {font: normal 14px/1.5em "돋움","Dotum",sans-serif;}
+
+/* mobile 해상도 우선 디자인 */
+/* 전체 디자인 => 구성1 */
+.wrap {width: 100%; }
+.box {width: 100%; }
+
+.list1, .list2, .list3, .list4, .list5, .list6, .list7, .list8, .list9, .list10, .list11, .list12 {width: 100%; margin-left: 0; margin-bottom: 10px;}
+.box img {width: 100%;}
+
+/* 해상도 768 이상 */
+/* grid2 */
+@media screen and ( min-width: 768px ){
+    .wrap {width: 90%; margin: 10px auto;}
+    .box  {margin: 10px 0;}
+
+
+
+
+
+
+
+.list1 {width: 6.5%;} /* (6.5%*1) + (2%*(1-1) = */
+.list2 {width: 15%;} /* (6.5%*2) + (2%*(2-1) = */
+.list3 {width: 23.5%;} /* (6.5%*3) + (2%*(3-1) = */
+.list4 {width: 32%;} /* (6.5%*4) + (2%*(4-1) = */
+.list5 {width: 40.5%;} /* (6.5%*5) + (2%*(5-1) = */
+.list6 {width: 49%;} /* (6.5%*6) + (2%*(6-1) = */
+.list7 {width: 57.5%;} 
+.list8 {width: 66%;} 
+.list9 {width: 74.5%;}
+.list10 {width: 83%;} 
+.list11 {width: 91.5%;} 
+.list12 {width: 100%;} 
+}

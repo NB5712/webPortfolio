@@ -1,0 +1,8 @@
+* 그리드와 관련된 대표적인 플러그인 : 960 Grid System 플러그인
+http://960.gs/
+
+* 모바일 기기의 뷰포트의 크깃값 정리 사이트
+https://yesviz.com/devices.php
+
+* 그리드 계산 사이트
+http://gridcalculator.dk/

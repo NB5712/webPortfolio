@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ajax(restAPI)</title>
+  <style>
+    /* reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    a { text-decoration: none; color: inherit; }
+
+    /* wrap */
+    #wrap { width: 90%; margin: 20px auto; }
+    #wrap h1 { margin-bottom: 30px; }
+    #wrap h2 { margin-bottom: 20px; }
+    #new { display: flex; flex-wrap: wrap; justify-content: space-between; }
+    .box { width: 300px; text-align: center; margin: 20px auto; padding: 15px 30px; border-radius: 4px; border: 1px solid #ddd; box-shadow: 4px 4px 4px #eee; }
+    .box a { display: block; }
+    .box h3 { color: #333; }
+    .box h3:hover { text-decoration: underline; }
+    .box h4 { font-weight: normal; font-size: 14px; margin-bottom: 20px; }
+    .box p { font-size: 12px; color: #666; text-align: left; }
+    .box p:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+      <h1>도서 API</h1>
+      <h2>신간도서</h2>
+      <div id="new">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div><!-- new -->
+    </div><!-- wrap -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+      $.ajax({
+        method: "GET",
+        url: "https://dapi.kakao.com/v3/search/book?target=title",
+        data: { query: "자바스크립트", size: 50 },// 미움받을 용기
+        headers: { Authorization: "KakaoAK RESTAPI키" },
+      })
+      .done(function (res) {
+        console.log(res);
+        console.log(res.documents);
+        console.log(res.documents[1].title);
+        console.log(res.documents[1].thumbnail);
+
+        // for문 (8개)
+        const boxs = document.getElementsByClassName("box");
+        
+        for (let i = 0; i < boxs.length; i++) {
+          let str = res.documents[i].contents; // 응답 데이터(res)의 documents 배열에서 i번째 요소의 contents 필드를 가져옴.
+          let str2 = str.substring(0, 60); 
+          // str.substring(시작위치, 끝위치)
+          // 시작위치 포함, 끝위치 미포함
+          // contents 문자열의 0번째 인덱스부터 59번째 인덱스까지의 부분 문자열을 잘라냄(총 60자)
+
+          $(".box")
+            .eq(i)
+            .append(`
+              <a href="sub.html">
+                <img src="${res.documents[i].thumbnail}">
+                <h3>${res.documents[i].title}</h3>
+                <h4>${res.documents[i].authors}</h4>
+                <p>${str2}</p>
+              </a>
+            `);
+        }
+      })
+      .fail(function() {
+        // 요청이 실패했을 때 실행
+        console.error('실패');
+      })
+      .always(function() {
+        // 성공이든 실패든 항상 실행
+        console.log('AJAX 요청이 완료되었습니다.');
+      });
+    </script>
+</body>
+</html>

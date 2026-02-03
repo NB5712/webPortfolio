@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/layout8.css">
+</head>
+<body>
+    <h1>사용자 맞춤형 테마전환</h1>
+    <div class="controls"></div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="cards-container">
+        <div class="card">
+            <img src="https://picsum.photos/id/101/300/200" alt="photo1">
+            <div class="title">카드 제목1</div>
+            <div class="description">카드1의 설명 자리입니다</div>
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/id/102/300/200" alt="photo1">
+            <div class="title">카드 제목2</div>
+            <div class="description">카드2의 설명 자리입니다</div>
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/id/103/300/200" alt="photo1">
+            <div class="title">카드 제목3</div>
+            <div class="description">카드3의 설명 자리입니다</div>
+        </div>
+    </div>
+
+
+    <script>
+
+        
+
+
+
+    const updateFontSize = (value) => {
+        document.documentElement.style.setProperty
+        ('--font-size', `${value}px`);
+    }
+
+    fontSize.addEventListener('input',(e)=>{
+        console.log(e.target.value);
+        updateFontSize(e.target.value);
+    })
+
+    </script>
+</body>
+</html>

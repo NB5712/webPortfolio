@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.ex {font-size: 20px;}
+.ex1 {font-size: 1.25em;}
+.ex2 {font-size: 125%;}
+
+.ex4{font-size: 10vw;}
+.ex5 {font-size: 10vh;}
+.ex6{font-size: 10vmin;}
+.ex7{font-size: 10vmax;}
+
+
+
+/* 
+    em : 배수(상위 요소 기준)
+    rem : 배수(최상위 요소 html 기준)
+*/
+html {font-size: 30px;}
+#rem {background-color: pink; font-size: 20px;}
+.rem1 { font-size: 1rem;}/* 16px */
+.rem2 {font-size: 0.875rem;}
+.rem3 {font-size: 0.75rem;}
+.rem4 {font-size: 0.625rem;}

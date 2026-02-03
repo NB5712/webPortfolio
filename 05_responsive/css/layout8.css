@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* 공통 */
+h1 { font:bold 2.5em "고딕","Gothic",sans-serif; width: 150px; margin: 30px auto; background: url("../images/icn_contact.jpg") no-repeat left center; padding-left: 30px; color: #c03; }
+
+@media screen and ( max-width:1024px ) { 
+  h1 { background: url("../images/icn_news.jpg") no-repeat left center; color: #09c; }
+}
+@media screen and ( max-width:768px ) { 
+  h1 { background: url("../images/icn_sitemap.jpg") no-repeat left center; color: #0f0; }
+}
+@media screen and ( max-width:320px  ) { 
+  h1 { background: none; color: #ca0; }
+}

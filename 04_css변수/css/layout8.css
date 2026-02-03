@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --font-size: 16px;
+    --spacing: 30px;
+    --card-bg-color: #f0f0f0;
+    --card-padding: 20px;
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {font-family: "Segoe UI",sans-serif; background-color: var(--bg-color); color: var(--text-color); font-size: var(--font-size); padding: 20px; transition: all 0.3s; }
+h1 {text-align: center; margin-bottom: var(--spacing); }
+.controls {display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing); }
+.controls label, .controls input {font-size: var(--font-size);}
+.controls input [type="range"] {width: 100px;}
+.cards-container {width: 70%; background-color: #ff0; margin: 50px; display: grid; }

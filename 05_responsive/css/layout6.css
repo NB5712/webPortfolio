@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/* 공통 */
+a { text-decoration: none; color: inherit; }
+body {color: #333; font-weight: bold; font-family: "고딕","Gothic",sans-serif;}
+
+/* 세로모드 */
+@media all and (orientation: portrait ) {
+    .quick { margin: 20px; }
+    .quick li {line-height: 2em;}
+    .quick li a { background: url("../images/bul_check_ap.png") no-repeat left center; padding-left: 20px; }
+}
+
+
+/* 가로모드 */
+@media all and ( orientation: landscape ) {
+    .quick { margin: 20px; }
+    .quick li {display: inline; margin: 0 10px;}
+    .quick li a { display: inline; background: url("../images/icn_contact.jpg") no-repeat left center; padding: 20px; }
+}
+
+
+
