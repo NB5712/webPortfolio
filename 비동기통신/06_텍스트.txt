@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ajax(로컬json)</title>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+  <style>
+    /* reset */
+    * { margin: 0; padding: 0; }
+    a { text-decoration: none; color: inherit; }
+    body { font-family: Charcoal, sans-serif; background-color: #eee; }
+    
+    /* main */
+    main { padding: 40px 0; }
+    #title { color: green; text-align: center; font-family: Impact; font-size: 40px; }
+    .subtitle { color: #666; font-size: 20px; margin-bottom: 40px; text-align: center; }
+    article { width: 1600px; margin: 0 auto; }
+    .box { width: 360px; border: 1px solid #ddd; background-color: #fff; margin: 30px 15px; display: inline-block; box-shadow: 4px 4px 4px #ddd; border-radius: 5px; overflow: hidden; position: relative; }
+    .box figure { width: 100%; }
+    .box figure img { width: 100%; vertical-align: top; }
+    .box figure img:hover { opacity: 0.5; }
+    .box figcaption { padding: 20px 10px; overflow: hidden; }
+    .box figcaption p { border-bottom: 1px solid #eee; color: #666; padding-bottom: 5px; margin-bottom: 20px; }
+    .price { float: left; }
+    .btn { float: right; font-size: 14px; border-radius: 5px; background: #ba7112; padding: 5px; color: #fff; }
+
+    /* NEW badge */
+    .new-badge { display: inline-block; background: crimson; color: white; font-size: 12px; padding: 2px 6px; border-radius: 4px; position: absolute; left: 10px; top: 10px; }
+  </style>
+
+  <script>
+    $(function () {
+      $.ajax({
+        url: "./json/icon.json", // 불러올 JSON 파일 경로
+        dataType: "json",       // JSON 형식으로 응답을 처리함
+        success: function (data) { // 성공 시 처리
+          console.log(data);
+          
+          if (data.length > 0) { // data는 배열이고, 각 항목은 하나의 상품 정보
+            data.forEach(function(i, idx){ // for (let i in data) { }
+              //review random count
+              let count = Math.floor(Math.random() * 100); // 0 ~ 99 임의 숫자
+              let isNew = i.isNew ? `<span class="new-badge">NEW</span>` : ""; // new 아이콘
+              
+              const $box = $('<div class="box"></div>').html
+                (`
+                  <a href="#">
+                    <figure>
+                      <img src="img/hit/${i.url}">
+                      <figcaption>
+                        <div>${isNew}</div>
+                        <h3>${i.title}</h3>
+                        <p>${i.subtitle}</p>
+                        <div>
+                          <span class="price">${i.price}</span>
+                          <span class="btn">${count} REVIEWS</span>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </a>
+                ` );
+
+                // 생성한 .box 요소를 #new 요소 내부에 추가
+                $('#content').append($box);
+              });
+          }
+        },
+        error: function (err) { // 실패 시 처리
+          console.error('로컬 JSON 불러오기 실패', err);
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <main>
+    <h2 id="title"></h2>
+    <article id="content"></article>
+  </main>
+
+  <script>
+    window.onload = function () {
+      // title
+      const title = document.getElementById("title");
+      title.innerHTML = "HIT OF HITS";
+
+      // sub title
+      const subtitle = document.createElement("p"); // 태그 생성
+      const textnode = document.createTextNode("히트조명의 인기 상품"); // 텍스트 생성
+      subtitle.classList.add("subtitle"); // 클래스 추가
+      // subtitle에 텍스트 추가
+      subtitle.appendChild(textnode);
+
+      // article 하단에 추가
+      document.querySelector("main").insertBefore(subtitle, document.querySelector("article"));
+    };
+  </script>
+</body>
+</html>

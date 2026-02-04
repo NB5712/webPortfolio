@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/layout1.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    
+</head>
+<body>
+    <main>
+        <h2 id="title"></h2>
+        <article>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </article>
+    </main>
+
+    <script>
+        window.onload = function(){
+            // title
+            const title = document.querySelector("#title");
+            title.innerHTML = "HIT OF HITS";
+
+            // sub title
+            const subtitle = document.createElement("p"); //p태그 추가
+            const textnode = document.createTextNode("히트조명의 인기상품"); //텍스트 생성
+            subtitle.classList.add("subtitle"); //클래스추가
+            subtitle.appendChild(textnode);
+
+
+            // 브라우저 장착
+            document.querySelector("main").insertBefore(subtitle, document.querySelector("article"));
+
+        }
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/* css변수 */
+:root {
+  --bg-color:#ffffff;
+  --text-color:#222222;
+  --accent-color: #3498db;
+  --card-bg:#f0f0f0;
+  --font-size:16px;
+}
+body.dark {
+  --bg-color:#1e1e1e;
+  --text-color:#eeeeee;
+  --card-bg:#2c2c2c;
+}
+
+/* reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { background-color: var(--bg-color); color:var(--text-color); font-size: var(--font-size); font-family: "Pretendard", sans-serif; transition: all 0.3s ease; padding: 20px; max-width:1400px; margin: 0 auto; }
+
+header h1 { text-align: center; color: var(--accent-color); }
+
+.controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 100px auto 50px; }
+.controls > div { display: flex; align-items: center; gap: 20px; }
+.controls button, .controls select, .controls input { padding: 10px; font-size: 1rem; border: 1px solid #ccc; border-radius: 6px; }
+.card-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+.card { width: 300px; background-color: var(--card-bg); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+.card:hover { transform: scale(1.05); }
+.card img { width: 100%; display: block; }
+.card figcaption { color: var(--accent-color); padding: 15px; font-weight: bold; }
+.card-container.grid { flex-direction: row; }
+.card-container.list { flex-direction: column; align-items: center; }

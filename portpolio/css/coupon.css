@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+/* 쿠폰 페이지 배경 */
+.coupon_page {
+    background-color: #f8f8f8;
+    padding: 20px 15px;
+}
+
+/* 상단 요약 텍스트 */
+.coupon_summary {
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+.coupon_summary strong {
+    color: #FFD200; /* 메가커피 노란색으로 포인트 */
+    font-weight: bold;
+}
+
+/* 쿠폰 카드 디자인 */
+.coupon_card {
+    background-color: #fff;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 쿠폰 왼쪽 절취선 효과 (디자인 디테일) */
+.coupon_card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background-color: #FFD200;
+}
+
+.coupon_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 쿠폰 상태 배지 (D-Day 등) */
+.badge {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+.badge.gray { background-color: #bbb; }
+
+.coupon_name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.coupon_date {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* 쿠폰 등록 버튼 스타일 */
+.coupon_add {
+    margin-top: 30px;
+}
+.coupon_add button {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}

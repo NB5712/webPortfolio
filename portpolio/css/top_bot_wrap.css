@@ -20,7 +20,8 @@
 
 /* 4. 하단 네비게이션 */
 .bot_wrap {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     bottom: 0;
     background-color: #000;
     border-top: 1px solid #222;

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>신간도서</h2>
+    <div id="new">
+
+    </div>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+        $.ajax({
+            method:"GET",
+            url:"",
+            headers:{Authorization: "KakaoAK"},
+            data:{query: "자바스크립트", size:50}
+        })
+        .done(function(res){
+            console.log("성공", res);
+        })
+        .fail(function(){
+            console.error("실행");
+        })
+        .always(function(){
+            console.log("AJAX 요청 완료!!");
+        });
+    </script>
+</body>
+</html>

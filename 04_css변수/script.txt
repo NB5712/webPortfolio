@@ -1,0 +1,46 @@
+modeBtn.addEventListener('click',function(){
+            const isDark = document.body.classList.toggle('dark');
+            modeBtn.textContent = isDark ? '☀️ 라이트모드' : '🌙 다크모드';
+         });
+
+----
+
+document.addEventListener('DOMContentLoaded',()=>{
+      const modeBtn = document.querySelector('.modeBtn');
+      const fontSize = document.querySelector('#fontSize');
+      const colorTheme = document.querySelector('#colorTheme');
+      const changeLayoutBtn = document.querySelector('#changeLayoutBtn');
+      const cardContainer = document.querySelector('#cardContainer');
+
+      // 글자크기
+      function changeFontSize(size){
+        document.documentElement.style.setProperty('--font-size',size+'px');
+      }
+      // 색상
+      function changeThemeColor(color){
+        document.documentElement.style.setProperty('--accent-color',color);
+      }
+      // 레이아웃
+      function changeLayout(type){
+        cardContainer.classList.remove('grid', 'list');
+        cardContainer.classList.add(type);
+      }
+
+      // 초기레이아웃 설정
+      changeLayout('grid');
+
+      modeBtn.addEventListener('click',function(){
+        const isDark = document.body.classList.toggle('dark');
+        modeBtn.textContent = isDark ? '☀️ 라이트모드' : '🌙 다크모드';
+      });
+
+      fontSize.addEventListener('input',(e)=>{
+        changeFontSize(e.target.value);
+      });
+      colorTheme.addEventListener('change',(e)=>{
+        changeThemeColor(e.target.value);
+      });
+      changeLayoutBtn.addEventListener('change',(e)=>{
+        changeLayout(e.target.value);
+      });
+    });

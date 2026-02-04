@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>le>ajax(restAPI)-탭</title>
+    <link rel="stylesheet" href="css/layout3.css">
+</head>
+<body>
+      <div id="wrap">
+    <header>
+      <h1>도서 API</h1>
+    </header>
+    <section>
+      <h2>추천 도서</h2>
+      <ul id="booklist">
+        <li><a href="#list_a" class="selected">문학/인문</a></li>
+        <li><a href="#list_b">유아/아동</a></li>
+        <li><a href="#list_c">경제/교양</a></li>
+      </ul>
+      <h3 id="titlelist"></h3>
+      <article id="list_a">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </article>
+
+      <article id="list_b">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </article>
+
+      <article id="list_c">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </article>
+    </section>
+
+    <footer>
+      <p>Copyright ⓒ INTERPARK Corporation All rights reserved.</p>
+    </footer>
+  </div>
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script>
+    $.ajax({
+      method: "GET",
+      url: "https://dapi.kakao.com/v3/search/book?target=title",
+      data: { query: "파리", size: 50 },
+      headers: { Authorization: "KakaoAK RESTAPI키" },
+    }).done(function (res) {
+      // for문 (8개)
+      const boxs = document.getElementsByClassName("box");
+
+      for (let i = 0; i < boxs.length; i++) {
+        let str = res.documents[i].contents;
+        let str2 = str.substring(0, 60);
+        $("#list_a >.box")
+          .eq(i)
+          .append(`
+                  <a href="#"><img src="${res.documents[i].thumbnail}"></a>
+                  <h3><a href="sub.html">${res.documents[i].title}</a></h3>
+                  <h4>${res.documents[i].authors}</h4>
+                  <p><a href="sub.html">${str2}</a></p>
+                  <a href="#" class="btn">click</a>
+                `);
+      }
+    });
+
+    $.ajax({
+      method: "GET",
+      url: "https://dapi.kakao.com/v3/search/book?target=title",
+      data: { query: "유아", size: 50 },
+      headers: { Authorization: "KakaoAK RESTAPI키" },
+    }).done(function (res) {
+
+      // for문 (8개)
+      const boxs = document.getElementsByClassName("box");
+
+      for (let i = 0; i < boxs.length; i++) {
+        let str = res.documents[i].contents;
+        let str2 = str.substring(0, 60);
+        $("#list_b >.box")
+          .eq(i)
+          .append(`
+            <a href="#"><img src="${res.documents[i].thumbnail}"></a>
+            <h3><a href="sub.html">${res.documents[i].title}</a></h3>
+            <h4>${res.documents[i].authors}</h4>
+            <p><a href="sub.html">${str2}</a></p>
+            <a href="#" class="btn">click</a>
+          `);
+      }
+    });
+
+    $.ajax({
+      method: "GET",
+      url: "https://dapi.kakao.com/v3/search/book?target=title",
+      data: { query: "경제", size: 50 },
+      headers: { Authorization: "KakaoAK RESTAPI키" },
+    }).done(function (res) {
+
+      // for문 (8개)
+      const boxs = document.getElementsByClassName("box");
+
+      for (let i = 0; i < boxs.length; i++) {
+        let str = res.documents[i].contents;
+        let str2 = str.substring(0, 60);
+        $("#list_c >.box")
+          .eq(i)
+          .append(`
+                  <a href="#"><img src="${res.documents[i].thumbnail}"></a>
+                  <h3><a href="sub.html">${res.documents[i].title}</a></h3>
+                  <h4>${res.documents[i].authors}</h4>
+                  <p><a href="sub.html">${str2}</a></p>
+                  <a href="#" class="btn">click</a>
+                `);
+      }
+    });
+  </script>
+
+  <script>
+    $(function () {
+      // 초기설정
+      $('section article:not(' + $('#booklist li a.selected').attr('href') + ')').hide();
+      $("#titlelist").text($('#booklist li a.selected').text());
+
+      // multipage
+      $('#booklist li a').click(function () {
+        // title(추가)
+        $("#titlelist").text( $(this).text() );
+        // 메뉴
+        $('#booklist li a').removeClass('selected');
+        $(this).addClass('selected');
+        // 내용
+        $('section article').hide();
+        $($(this).attr('href')).show();
+        return false; 
+      });
+    });
+  </script>
+
+</body>
+</html>

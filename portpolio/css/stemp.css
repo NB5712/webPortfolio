@@ -30,6 +30,18 @@
     font-size: 1.8rem;
 }
 
+.status_header button {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+
+.status_header button img {
+    width: 100%;
+    
+}
+
+
 .btn_history {
     background-color: #f4f4f4;
     border: 1px solid #ddd;
@@ -48,7 +60,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개씩 2줄 */
     gap: 10px;
-    background-color: #fdf2bb; /* 연한 노란색 배경판 */
+    background-color: #ffd200; /* 노란색 배경판 */
     padding: 20px;
     border-radius: 10px;
 }
