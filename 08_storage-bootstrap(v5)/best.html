@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Storage | Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <!-- 1번째 navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"><!-- navbar-dark bg-dark -->
+      <div class="container-fluid">
+        <a class="navbar-brand active" href="index.html">Storage</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="best.html">베스트</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mypage.html">내정보</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">로그인</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signup.html">회원가입</a>
+            </li>
+          </ul>
+          <!-- 
+            ** div 구조
+            d-flex : flex 컨테이너
+            flex-column : 기본(모바일) 에서는 세로 정렬
+            flex-lg-row : 화면이 lg(≥992px) 이상이면 가로 정렬
+            align-items-end : 모바일에서 오른쪽 정렬
+            ms-lg-auto : lg 이상에서만 왼쪽(margin-start)에 auto 적용 => 우측 정렬
+            추가는 선택 : mt-3 mt-lg-0 모바일은 메뉴 아래라서 위 여백 필요, lg 이상은 여백 제거
+
+            ** span 구조(t:위 b:아래 s(start):왼쪽 e(end):오른쪽 x:좌우 y:상하 없음:전체)
+            me-lg-2 : lg 이상에서 버튼과 간격 확보
+            mb-2 mb-lg-0 : 모바일 세로 간격 / PC에서는 제거
+          -->
+          <div class="d-flex flex-column flex-lg-row align-items-end align-items-lg-center ms-lg-auto text-white ">
+            <span id="userNameDisplay" class="me-lg-2 mb-2 mb-lg-0"></span>
+            <button id="logoutButton" class="btn btn-danger btn-sm" style="display: none;">로그아웃</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2></h2>
+        <p>여기에 콘텐츠 추가</p>
+    </div>
+
+    <footer class="position-fixed w-100 text-center text-white bg-dark py-2" style="bottom: 0;">
+      <p class="mb-0">&copy; 2026 SMS. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

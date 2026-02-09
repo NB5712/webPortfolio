@@ -1,0 +1,294 @@
+html
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Change</title>
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+  <header>
+    <h1>Layout Change</h1>
+    <ul>
+      <li><a href="#"><i class="fab fa-google"></i><span>Google</span></a></li>
+      <li><a href="#"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>
+      <li><a href="#"><i class="far fa-envelope"></i><span>E-mail</span></a></li>
+    </ul>
+  </header>
+
+  <main>
+    <ul>
+      <li class="on"><a href="*">ALL</a></li>
+      <li><a href=".odd">ODD</a></li>
+      <li><a href=".even">EVEN</a></li>
+    </ul>
+
+    <section>
+      <article class="odd">
+        <div>
+          <img src="img/p1.jpg" alt="photo">
+          <h2>Lorem.</h2>
+          <p>Lorem.</p>
+        </div>
+      </article>
+      <article class="even">
+        <div>
+          <img src="img/p2.jpg" alt="photo">
+          <h2>Voluptatibus.</h2>
+          <p>Maiores!</p>
+        </div>
+      </article>
+      <article class="odd">
+        <div>
+          <img src="img/p3.jpg" alt="photo">
+          <h2>Sed.</h2>
+          <p>Dolore.</p>
+        </div>
+      </article>
+      <article class="even">
+        <div>
+          <img src="img/p4.jpg" alt="photo">
+          <h2>Est.</h2>
+          <p>Numquam?</p>
+        </div>
+      </article>
+      <article class="odd">
+        <div>
+          <img src="img/p5.jpg" alt="photo">
+          <h2>Distinctio.</h2>
+          <p>Debitis.</p>
+        </div>
+      </article>
+      <article class="even">
+        <div>
+          <img src="img/p6.jpg" alt="photo">
+          <h2>Sunt.</h2>
+          <p>Aliquid.</p>
+        </div>
+      </article>
+      <article class="odd">
+        <div>
+          <img src="img/p7.jpg" alt="photo">
+          <h2>Autem!</h2>
+          <p>Aperiam.</p>
+        </div>
+      </article>
+      <article class="even">
+        <div>
+          <img src="img/p8.jpg" alt="photo">
+          <h2>Accusantium?</h2>
+          <p>Rerum.</p>
+        </div>
+      </article>
+      <article class="odd">
+        <div>
+          <img src="img/p9.jpg" alt="photo">
+          <h2>Expedita?</h2>
+          <p>Nobis?</p>
+        </div>
+      </article>
+      <article class="even">
+        <div>
+          <img src="img/p10.jpg" alt="photo">
+          <h2>Molestiae?</h2>
+          <p>Atque?</p>
+        </div>
+      </article>
+      <article class="odd">
+        <div>
+          <img src="img/p11.jpg" alt="photo">
+          <h2>Molestias.</h2>
+          <p>Debitis.</p>
+        </div>
+      </article>
+      <article class="even">
+        <div>
+          <img src="img/p12.jpg" alt="photo">
+          <h2>Placeat?</h2>
+          <p>Officia!</p>
+        </div>
+      </article>
+      <article class="odd">
+        <div>
+          <img src="img/p13.jpg" alt="photo">
+          <h2>Assumenda?</h2>
+          <p>Itaque?</p>
+        </div>
+      </article>
+      <article class="even">
+        <div>
+          <img src="img/p14.jpg" alt="photo">
+          <h2>Minima!</h2>
+          <p>Velit.</p>
+        </div>
+      </article>
+      <article class="odd">
+        <div>
+          <img src="img/p15.jpg" alt="photo">
+          <h2>Corporis.</h2>
+          <p>Nihil!</p>
+        </div>
+      </article>
+      <article class="even">
+        <div>
+          <img src="img/p16.jpg" alt="photo">
+          <h2>Incidunt!</h2>
+          <p>Necessitatibus?</p>
+        </div>
+      </article>
+      <article class="odd">
+        <div>
+          <img src="img/p17.jpg" alt="photo">
+          <h2>Quod.</h2>
+          <p>Voluptatibus?</p>
+        </div>
+      </article>
+      <article class="even">
+        <div>
+          <img src="img/p18.jpg" alt="photo">
+          <h2>Nisi.</h2>
+          <p>Ullam.</p>
+        </div>
+      </article>
+      <article class="odd">
+        <div>
+          <img src="img/p19.jpg" alt="photo">
+          <h2>Architecto.</h2>
+          <p>Nihil!</p>
+        </div>
+      </article>
+      <article class="even">
+        <div>
+          <img src="img/p20.jpg" alt="photo">
+          <h2>Ipsam?</h2>
+          <p>Perspiciatis.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
+------------
+
+css
+
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+
+/* reset */
+* { margin: 0; padding: 0; }
+ul, li { list-style: none; }
+a { text-decoration: none; color: inherit; }
+body { background-color: #efefef; }
+
+/* header */
+header { width: 400px; height: 100%; background: linear-gradient(45deg, skyblue, teal); position: fixed; left: 0; top: 0; transition: all 0.5s; }
+header h1 { font:bold 50px/1 'orbitron',sans-serif; letter-spacing: 1px; color: #fff; position: absolute; left: 50px; top: 50%; transform: translateY(-150%); }
+header h1::after { content:""; display: block; width: 150px; height: 2px; background-color: #fff; margin-top: 20px; }/* 선 */
+header h1::before { content:"UI/UX DEVELOPMENT"; display: block; font:14px/1 'orbitron',sans-serif; color: #fff; letter-spacing: 2px; position: absolute; left: 0; top: 140px; opacity: 0.8; }/* subtitle */
+
+header ul { position: absolute; left: 30px; bottom: 100px; display: flex; }
+header ul li { margin-right: 5px; }
+header ul li a { font-size: 20px; color: #fff; }
+header ul li a span { display: inline-block; font-weight: bold; opacity: 0.7; transform: scale(0.7) translateX(-5px); }
+
+main { margin-left: 400px; padding: 20px; box-sizing: border-box; }
+main ul { width: 100%; margin-bottom: 10px; margin-right: 20px; display: flex; justify-content: flex-end; gap: 20px; }
+main ul li { width: 100px; height: 26px; }
+main ul li a { display: block; width: 100%; height: 100%; font:bold 7px/26px 'orbitron',sans-serif; color: #aaa; letter-spacing: 1px; text-align: center; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(100 150 150/50%); }/* 기본a */
+main ul li.on a { background: linear-gradient(45deg,skyblue,teal); color: #fff; box-shadow: 0 5px 10px rgb(100,150,150); }
+
+main section { width: 100%; display: flex; flex-wrap: wrap; align-items: flex-start; }
+main section article { width: 20%; padding: 12px; box-sizing: border-box; }
+main section article div { width: 100%; height: 100%; background-color: #fff; border-radius: 4px; padding: 14px; box-sizing: border-box; box-shadow: 5px 5px 10px rgba(0,0,0,0.1); }
+main section article div img { width: 100%; }
+main section article div h2 { margin-top: 15px; font:bold 11px/1 'orbitron',sans-serif; letter-spacing: 1px; color: #444; margin-bottom: 5px; } 
+main section article div p { font:10px/1.2 'arial',sans-serif; color: #777; margin-bottom: 15px; }
+
+@media screen and ( max-width:1599px ){
+  header { width: 350px; }
+  main { margin-left: 350px; }
+  main section article { width: 25%; }
+}
+
+@media screen and ( max-width:1199px ){
+  /* 브라우저 폭이 1200px 미만일 때 header 위치 위로 이동, article 가로로 4개씩 배치 */
+  header { width: 100%; height: 80px; position: relative; }
+  header h1 { font:bold 24px/1 "orbitron"; transform: translateY(-50%); }
+  header h1::after, header h1::before { display: none; }
+  header ul { left: 83%; bottom: 25px; }
+  header ul li { margin-right: 20px; }
+  header ul li a { font-size: 20px; }
+  header ul li a span { display: none; }
+  main { width: 100%; margin-left: 0px; }
+  main section article { width: 25%; }
+}
+
+@media screen and ( max-width:899px ){
+  /* 브라우저 폭이 900px 미만일 때 header의 ul 조절, article 3개씩 배치 */
+  header ul { left: 80%; }
+  main section article { width: 33.33%; }
+}
+
+@media screen and ( max-width:679px ){
+  /* 브라우저 폭이 680px 미만일 때 header의 ul 조절, article 2개씩 배치 */
+  header ul { left: 70%; }
+  main section article { width: 50%; }
+}
+
+@media screen and ( max-width:539px ){
+  /* 브라우저 폭이 540px 미만일 때 header의 sns 숨김, article 1개씩 배치 */
+  header ul { display: none; }
+  main ul { box-sizing: border-box; padding: 0px 13px; }
+  main ul li { flex: 1; }
+  main section article { width: 100%; }
+}
+
+
+-------
+
+js
+
+$(function(){
+  // 자주 수정이 발생하는 요소들 전역변수로 설정
+  const frame = "section";
+  const box = "article";
+  const speed = "0.5s";
+  let grid;
+
+  // 초기화 함수 호출
+  init();
+
+  // 초기화하는 함수 정수
+  function init(){
+    grid = new Isotope(frame, { // 배치할 요소를 감싸고 있는 부모 요소명
+      itemSelector: box, // 배치할 요소명
+      columnWidth: box, // 너빗값을 구할 요소명
+      transitionDuration: speed // 화면 재배치시 요소가 움직이는 속도
+    });
+  }
+
+  // 버튼 이벤트
+  $('main').on('click','li',function(e){
+    e.preventDefault(); // a 기능 막음
+    const sort = $(this).children('a').attr('href');
+
+    // 전체 li 디자인
+    $('main ul li').removeClass('on');
+    $(this).addClass('on');
+
+    grid.arrange({
+      filter: sort
+    });
+  });
+});

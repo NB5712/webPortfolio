@@ -1,0 +1,114 @@
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+
+font-family:'orbitron';
+
+
+-------
+
+* 에디터의 자동 완성 기능
+section>article*20>div>img[src="img/p$.jpg"]+h2>lorem3^p>lorem7 
+
+* 설명
+1. section 태그 안에 자식으로 article 태그 20개 생성
+2. 자식으로 div 태그 생성
+3. 자식으로 img 태그 생성할 때 [ ]를 활용하여 태그의 속성 지정
+4. 그 안에 이미지 경로인 "img/p$.jpg" 넣음
+    => $를 넣으면 태그가 반복될 때마다 숫자를 카운트해서 증가시킨 값이 입력
+5. +h2 <img> 태그의 형제 요소로 h2 생성
+6. >lorem3 자식 요소로 단어 3개인 텍스트를 자동 입력
+7. ^p다시 상위 요소로 올라가 p태그의 자식 요소로 단어 7개인 텍스트를 자동 입력
+
+-------
+
+
+Layout Change
+
+Google
+Youtube
+E-mail
+
+ALL
+ODD
+EVEN
+
+Here comes title.
+Here comes content description in detail.
+
+UI/UX DEVELOPMENT
+
+-------
+
+isotope.metafizzy.co
+비상업용일 때만 무료 플러그인
+
+
+
+function init(){
+        grid = new Isotope(frame, { // 배치할 요소를 감싸고 있는 부모 요소명
+            itemSelector: box, // 배치할 요소명
+            columnWidth: box, // 너빗값을 구할 요소명
+            transitionDuration: speed // 화면 재배치시 요소가 움직이는 속도
+        });
+    }
+
+------------
+
+* 중단점
+ - 1600px 이상
+  : 기본 css
+
+ - 1600px 미만
+  : article 4개 배치
+
+ - 1200px 미만
+  : header 위로 배치 / article 4개 배치
+
+
+ - 900px 미만
+  : article 3개 배치
+
+
+ - 680px 미만
+  : article 2개 배치
+ - 540px 미만
+  : article 1개 배치
+  : header ul 숨김
+  : main ul 크기 변동
+
+
+-------
+
+@media screen and ( max-width:1199px ){
+    /* 브라우저 폭이 1200px 미만일 때 header 위치 위로 이동, article 가로로 4개씩 배치 */
+    header { width: 100%; height: 80px; position: relative; }
+    header h1 { font:bold 24px/1 "orbitron"; transform: translateY(-50%); }
+    header h1::after, header h1::before { display: none; }
+    header ul { left: 83%; bottom: 25px; }
+    header ul li { margin-right: 20px; }
+    header ul li a { font-size: 20px; }
+    header ul li a span { display: none; }
+    main { width: 100%; margin-left: 0px; }
+    main section article { width: 25%; }
+}
+
+@media screen and ( max-width:899px ){
+    /* 브라우저 폭이 900px 미만일 때 header의 ul 조절, article 3개씩 배치 */
+    header ul { left: 80%; }
+    main section article { width: 33.33%; }
+}
+
+@media screen and ( max-width:679px ){
+    /* 브라우저 폭이 680px 미만일 때 header의 ul 조절, article 2개씩 배치 */
+    header ul { left: 70%; }
+    main section article { width: 50%; }
+}
+
+@media screen and ( max-width:539px ){
+    /* 브라우저 폭이 540px 미만일 때 header의 sns 숨김, article 1개씩 배치 */
+    header ul { display: none; }
+    main ul { box-sizing: border-box; padding: 0px 13px; }
+    main ul li { flex: 1; }
+    main section article { width: 100%; }
+}

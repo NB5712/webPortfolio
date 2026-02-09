@@ -1,0 +1,6 @@
+1. Masonry
+  https://masonry.desandro.com/
+2. Packery
+  https://packery.metafizzy.co/
+3. Shuffle.js
+  shuffle.js.org

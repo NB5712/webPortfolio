@@ -1,0 +1,200 @@
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Storage | Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <!-- 1번째 navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"><!-- navbar-dark bg-dark -->
+      <div class="container-fluid">
+        <a class="navbar-brand active" href="index.html">Storage</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="best.html">베스트</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mypage.html">내정보</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">로그인</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signup.html">회원가입</a>
+            </li>
+          </ul>
+          <!-- 
+            ** div 구조
+            d-flex : flex 컨테이너
+            flex-column : 기본(모바일) 에서는 세로 정렬
+            flex-lg-row : 화면이 lg(≥992px) 이상이면 가로 정렬
+            align-items-end : 모바일에서 오른쪽 정렬
+            ms-lg-auto : lg 이상에서만 왼쪽(margin-start)에 auto 적용 => 우측 정렬
+            추가는 선택 : mt-3 mt-lg-0 모바일은 메뉴 아래라서 위 여백 필요, lg 이상은 여백 제거
+
+            ** span 구조(t:위 b:아래 s(start):왼쪽 e(end):오른쪽 x:좌우 y:상하 없음:전체)
+            me-lg-2 : lg 이상에서 버튼과 간격 확보
+            mb-2 mb-lg-0 : 모바일 세로 간격 / PC에서는 제거
+          -->
+          <div class="d-flex flex-column flex-lg-row align-items-end align-items-lg-center ms-lg-auto text-white ">
+            <span id="userNameDisplay" class="me-lg-2 mb-2 mb-lg-0"></span>
+            <button id="logoutButton" class="btn btn-danger btn-sm" style="display: none;">로그아웃</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-5">
+      <h2>Storage 홈에 오신 것을 환영합니다!</h2>
+      <p>여기에 콘텐츠를 추가하세요.</p>
+    </div>
+    <footer class="position-fixed w-100 text-center text-white bg-dark py-2" style="bottom: 0;">
+      <p class="mb-0">&copy; 2026 SMS. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+----
+
+$(function(){
+  // 페이지 로드시 사용자 세션 확인
+  const savedName = sessionStorage.getItem("name");
+  const savedEmail = sessionStorage.getItem("email");
+
+  if (savedName) {
+    updateUserNameDisplay(savedName, savedEmail);
+
+    // 로그인한 상태에서 login.html
+    if (window.location.pathname.includes("login.html")) {
+      alert("이미 로그인된 상태입니다.");
+      window.location.href = "mypage.html"; // 혹은 index.html 등
+    }
+
+    // 회원가입 상태에서 signup.html 접근 시 리디렉션
+    if (window.location.pathname.includes("signup.html")) {
+      alert("이미 회원가입된 상태입니다.");
+      window.location.href = "mypage.html"; // 혹은 index.html 등
+    }
+
+  } else {
+    // 로그아웃 상태에서 mypage.html 접근 시 로그인 페이지로 이동
+    if (window.location.pathname.includes("mypage.html")) {
+      document.body.innerHTML = ""; // 페이지 내용을 비워 표시 안 되도록
+      window.location.href = "login.html";
+    }
+  }
+
+  /* 
+    window.location.pathname.includes('특정문자열');
+        => 현재 페이지의 URL 경로(pathname)가 특정 문자열을 포함하는지 여부를 확인하는 메서드
+    window.location.pathname
+        => 현재 페이지의 URL에서 **경로(path)**만을 반환. 즉, 도메인 뒤에 오는 경로 부분
+        => 예) https://www.example.com/mypage.html이라면 pathname은 "/mypage.html"
+    includes('특정문자열')
+        => 문자열을 포함하는지 확인하고, 포함되면 true를 반환하고, 그렇지 않으면 false를 반환
+  */
+
+  // 사용자 이름 표시 업데이트
+  function updateUserNameDisplay(name, email) {
+    if (name) {
+      $("#userNameDisplay").text(`안녕하세요, ${name}님!`);
+      $("#logoutButton").show(); // 로그아웃 버튼 표시
+      if (window.location.pathname.includes("mypage.html")) {
+        $("#userInfo").html(`<p>사용자 이름: ${name}</p><p>메일주소: ${email}</p>`);
+        /* 
+          출력예시) 사용자 이름: 홍길동(변수내용)
+          $("#userInfo").html("<p>텍스트" + 변수 + "</p>");
+          $("#userInfo").html("<p>사용자 이름: " + name + "</p>");
+          $("#userInfo").html(`<p>텍스트 ${변수}</p>`);
+          $("#userInfo").html(`<p>사용자 이름: ${name}</p>`);
+        */
+      }
+    } else {
+      $("#userNameDisplay").text("");
+      $("#logoutButton").hide(); // 로그아웃 버튼 숨기기
+    }
+  }
+
+  // 회원가입 폼 제출시 처리
+  $("#signupForm").submit(function (event) {
+    // 폼의 기본 제출을 막음
+    event.preventDefault();
+
+    const name = $("#name").val().trim();
+    const email = $("#email").val().trim();
+
+    if (name == "" || email == "") {
+      alert("성명과 이메일 주소를 모두 입력해 주세요.");
+      return;
+    } else {
+      // 성명과 이메일을 localStorage에 저장
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+
+      // 회원가입 후 로그인 페이지로 이동(필요시 변경)
+      window.location.href = "login.html";
+
+      alert("회원가입이 완료되었습니다.");
+    }
+  });
+
+  // 로그인 버튼 클릭시 처리
+  $("#loginButton").on('click',function () {
+    const name = $("#name").val().trim();
+    const email = $("#email").val().trim();
+
+    const savedName = localStorage.getItem("name");
+    const savedEmail = localStorage.getItem("email");
+
+    if ((savedName == name) && (savedEmail == email)) {
+      sessionStorage.setItem("name", name);
+      sessionStorage.setItem("email", email);
+      updateUserNameDisplay(name, email);
+      // 로그인시 마이페이지로 이동(필요시 변경)
+      window.location.href = "mypage.html";
+
+      alert("로그인 성공!!");
+      /* 
+        alert()가 페이지 이동을 방해
+        => alert() 함수는 페이지 이동 전에 모달 팝업을 띄움
+        페이지 이동이 즉시 이루어져야 한다면, alert()을 페이지 이동 뒤에 호출하는 것이 좋음
+        alert() 호출로 인해 페이지 이동이 지연되거나 아예 되지 않을 수 있음
+       */
+    } else if (savedName != name) {
+      alert("사용자 이름을 정확히 입력하세요!");
+    } else if (savedEmail != email) {
+      alert("사용자 메일주소를 정확히 입력하세요");
+    } else {
+      alert("사용자 이름과 사용자 메일주소를 정확히 입력하세요");
+    }
+  });
+
+  // 로그아웃 버튼 클릭시 처리
+  $("#logoutButton").on('click',function () {
+    sessionStorage.removeItem("name");
+    sessionStorage.removeItem("email");
+    updateUserNameDisplay("", "");
+    // 로그아웃 후 로그인 페이지로 이동
+    window.location.href = "login.html";
+  });
+
+   // 회원탈퇴 버튼 클릭시 처리
+  $("#signOut").on('click',function () {
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
+    sessionStorage.removeItem("name");
+    sessionStorage.removeItem("email");
+    updateUserNameDisplay("", "");
+    // 회원탈퇴 후 회원가입 페이지로 이동
+    window.location.href = "signup.html";
+  });
+});
